@@ -33,8 +33,8 @@
     // 从配置文件初始化访问控制列表
     acl.readFromConfigFile("ip-list");
     // 手动添加，以追加的形式添加
-    acl.add("192.168.2.15");
-    acl.add(Arrays.asList("192.168.2.15", "192.168.1.20"));
+    acl.add("192.168.10.0/24");
+    acl.add(Arrays.asList("192.168.2.15", "192.168.3.0/24"));
     
     // 检查ip是否允许访问
     System.out.println(acl.check("192.168.2.15")); // true

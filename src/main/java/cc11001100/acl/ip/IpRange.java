@@ -34,6 +34,8 @@ public class IpRange {
 			long hostBitSetToOne = (1L << hostBitLength) - 1;
 			high = ipLong | hostBitSetToOne;
 			low = ipLong & (Long.MAX_VALUE ^ hostBitSetToOne);
+			// 网段将主机位全部置0
+			this.ipRange = long2Ip(low) + "/" + networkBitLength;
 		}
 	}
 
